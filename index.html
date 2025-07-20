@@ -1,0 +1,97 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Driving Licence Checker</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f9f9f9;
+      text-align: center;
+      padding: 50px;
+    }
+    .container {
+      max-width: 600px;
+      margin: auto;
+      background: white;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 0 15px rgba(0,0,0,0.1);
+    }
+    input[type="text"] {
+      width: 80%;
+      padding: 10px;
+      margin-bottom: 10px;
+    }
+    button {
+      padding: 10px 20px;
+      cursor: pointer;
+    }
+    .result {
+      margin-top: 20px;
+      text-align: left;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Driving Licence Checker</h1>
+    <input type="text" id="licenceInput" placeholder="Enter Licence Number">
+    <button id="searchBtn">Search</button>
+    <div class="result" id="result"></div>
+  </div>
+
+  <script>
+    const licenceData = {
+      "DK0897294CH0874": {
+        name: "Ajharul Islam",
+        dob: "20 May 2001",
+        blood: "B+",
+        father: "Shahjahan Miah",
+        issue: "01 January 2022",
+        validity: "01 January 2032",
+        licenceNo: "DK0897294CH0874",
+        authority: "BRTA Dhaka Metro",
+        address: "Rangpur, Bangladesh",
+        class: "Non-Professional"
+      }
+    };
+
+    document.getElementById("searchBtn").addEventListener("click", function () {
+      const input = document.getElementById("licenceInput").value.trim();
+      const data = licenceData[input];
+      const resultDiv = document.getElementById("result");
+
+      if (data) {
+        resultDiv.innerHTML = `
+          <h3>Licence Information:</h3>
+          <p><strong>Name:</strong> ${data.name}</p>
+          <p><strong>Date of Birth:</strong> ${data.dob}</p>
+          <p><strong>Blood Group:</strong> ${data.blood}</p>
+          <p><strong>Father:</strong> ${data.father}</p>
+          <p><strong>Issu:</strong> ${data.issue}</p>
+          <p><strong>Validity:</strong> ${data.validity}</p>
+          <p><strong>Licence No:</strong> ${data.licenceNo}</p>
+          <p><strong>Issuing Authority:</strong> ${data.authority}</p>
+          <p><strong>Address:</strong> ${data.address}</p>
+          <p><strong>Class(es):</strong> ${data.class}</p>
+        `;
+      } else {
+        resultDiv.innerHTML = "<p style='color:red;'>No data found for this licence number.</p>";
+      }
+    });
+
+    // Auto-load if ?licence= parameter is in URL
+    window.onload = function () {
+      const urlParams = new URLSearchParams(window.location.search);
+      const licenceNo = urlParams.get("licence");
+      if (licenceNo) {
+        document.getElementById("licenceInput").value = licenceNo;
+        document.getElementById("searchBtn").click();
+      }
+    };
+  </script>
+</body>
+</html>
