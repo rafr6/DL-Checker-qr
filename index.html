@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>My BRTA Licence Card</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: url('watermark.png') center center no-repeat;
+      background-size: 400px;
+      background-color: #f9f9f9;
+      margin: 0;
+      padding: 0;
+    }
+    .container {
+      max-width: 900px;
+      margin: 50px auto;
+      background-color: white;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+      padding: 20px;
+      border-radius: 12px;
+    }
+    h1 {
+      text-align: center;
+      color: #d32f2f;
+      text-transform: uppercase;
+      margin-bottom: 5px;
+    }
+    h3 {
+      text-align: center;
+      color: #333;
+      font-weight: normal;
+      margin-top: 0;
+      margin-bottom: 20px;
+    }
+    .info-card {
+      display: flex;
+      flex-direction: row;
+      gap: 20px;
+      align-items: flex-start;
+    }
+    .photo {
+      flex: 0 0 200px;
+    }
+    .photo img {
+      width: 100%;
+      border-radius: 10px;
+      border: 2px solid #ccc;
+    }
+    .details {
+      flex: 1;
+    }
+    .row {
+      margin-bottom: 10px;
+    }
+    .label {
+      font-weight: 300;
+      display: block;
+      font-size: 14px;
+    }
+    .value {
+      font-weight: bold;
+      font-size: 16px;
+      margin-top: 2px;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>My BRTA Licence Card</h1>
+    <h3>Card Holder Information</h3>
+    <div class="info-card">
+      <div class="photo">
+        <img src="profile.jpg" alt="License Holder Photo" />
+      </div>
+      <div class="details">
+        <div class="row">
+          <span class="label">নাম / Name</span>
+          <span class="value">AJHARUL ISLAM</span>
+        </div>
+        <div class="row">
+          <span class="label">জন্ম তারিখ / Date of Birth</span>
+          <span class="value">15 Jan 1997</span>
+        </div>
+        <div class="row">
+          <span class="label">রক্তের গ্রুপ / Blood Group</span>
+          <span class="value">B+</span>
+        </div>
+        <div class="row">
+          <span class="label">পিতা/স্বামী / Father/Husband</span>
+          <span class="value">BADUL MIAH</span>
+        </div>
+        <div class="row">
+          <span class="label">প্রদান/নবায়ন / Issue/Renewal</span>
+          <span class="value">22 Mar 2023</span>
+        </div>
+        <div class="row">
+          <span class="label">মেয়াদ / Validity</span>
+          <span class="value">23 Mar 2028</span>
+        </div>
+        <div class="row">
+          <span class="label">লাইসেন্স নং / License No</span>
+          <span class="value">DK0897294CH0874</span>
+        </div>
+        <div class="row">
+          <span class="label">প্রদানকারী কর্তৃপক্ষ / Issuing Authority</span>
+          <span class="value">DHAKA METRO-1, BRTA</span>
+        </div>
+        <div class="row">
+          <span class="label">ঠিকানা / Address</span>
+          <span class="value">JATRAPUR, ASHUGANJ, BRAHMANBARIA</span>
+        </div>
+        <div class="row">
+          <span class="label">Class(es)</span>
+          <span class="value">Heavy Vehicle</span>
+        </div>
+        <div class="row">
+          <span class="label">Status</span>
+          <span class="value">ACTIVE</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
